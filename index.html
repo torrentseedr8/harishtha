@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Valentine ❤️</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 420px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #e91e63;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 10px;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .yes {
+      background-color: #e91e63;
+      color: white;
+    }
+
+    .no {
+      background-color: #ccc;
+      color: #333;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card" id="card">
+    <h1>Will you be my Valentine forever? 💖🌹</h1>
+
+    <button class="yes" onclick="sayYes()">Yes</button>
+    <button class="no" id="noBtn" onmouseover="moveNo()">No</button>
+  </div>
+
+  <script>
+    function sayYes() {
+      document.getElementById('card').innerHTML = `
+        <h1>Happy Valentine’s Day ❤️🥰</h1>
+        <p style="font-size:20px; margin-top:20px;">
+          Married once.<br>
+          Choosing you every day.<br><br>
+          Forever yours 💍✨
+        </p>
+        <p style="margin-top:25px; font-weight:bold;">
+          — Saran ❤️ Harshitha
+        </p>
+      `;
+    }
+
+    function moveNo() {
+      const noBtn = document.getElementById('noBtn');
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 60);
+
+      noBtn.style.position = 'fixed';
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    }
+  </script>
+</body>
+</html>
